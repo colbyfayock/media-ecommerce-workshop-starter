@@ -27,7 +27,7 @@ export default function Home() {
                 <h2>Prepare for liftoff.</h2>
                 <p>Apparel that&apos;s out of this world!</p>
               </div>
-              <img className={styles.heroImage} src="/images/space-jelly-gear-banner.jpg" alt="" />
+              <img className={styles.heroImage} width="1200" height="400" src="/images/space-jelly-gear-banner.jpg" alt="" />
             </a>
           </Link>
         </div>
