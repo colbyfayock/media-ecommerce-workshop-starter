@@ -22,13 +22,11 @@ export default function Home() {
 
         <div className={styles.hero}>
           <Link href="#">
-            <a>
-              <div className={styles.heroContent}>
-                <h2>Prepare for liftoff.</h2>
-                <p>Apparel that&apos;s out of this world!</p>
-              </div>
-              <img className={styles.heroImage} width="1200" height="400" src="/images/space-jelly-gear-banner.jpg" alt="" />
-            </a>
+            <div className={styles.heroContent}>
+              <h2>Prepare for liftoff.</h2>
+              <p>Apparel that&apos;s out of this world!</p>
+            </div>
+            <img className={styles.heroImage} width="1200" height="400" src="/images/space-jelly-gear-banner.jpg" alt="" />
           </Link>
         </div>
 
@@ -38,18 +36,16 @@ export default function Home() {
           {products.slice(0, 4).map(product => {
             return (
               <li key={product.id}>
-                <Link href="#">
-                  <a>
-                    <div className={styles.productImage}>
-                      <img width="500" height="500" src={product.image} alt="" />
-                    </div>
-                    <h3 className={styles.productTitle}>
-                      { product.name }
-                    </h3>
-                    <p className={styles.productPrice}>
-                      ${ product.price }
-                    </p>
-                  </a>
+                <Link href={`/products/${product.id}`}>
+                  <div className={styles.productImage}>
+                    <img width="500" height="500" src={product.image} alt="" />
+                  </div>
+                  <h3 className={styles.productTitle}>
+                    { product.name }
+                  </h3>
+                  <p className={styles.productPrice}>
+                    ${ product.price }
+                  </p>
                 </Link>
                 <p>
                   <Button>
