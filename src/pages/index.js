@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link';
+import Image from 'next/image';
 
 import Layout from '@components/Layout';
 import Container from '@components/Container';
@@ -7,7 +8,14 @@ import Button from '@components/Button';
 
 import products from '@data/products';
 
-import styles from '@styles/Page.module.scss'
+import styles from '@styles/Page.module.scss';
+
+const FEATURED_PRODUCTS = [
+  'cosmo-hat-model',
+  'cosmo-hat',
+  'cosmo-mousepad',
+  'cosmo-tshirt-model',
+];
 
 export default function Home() {
   return (
@@ -26,7 +34,13 @@ export default function Home() {
               <h2>Prepare for liftoff.</h2>
               <p>Apparel that&apos;s out of this world!</p>
             </div>
-            <img className={styles.heroImage} width="1200" height="400" src="/images/space-jelly-gear-banner.jpg" alt="" />
+            <Image
+              className={styles.heroImage}
+              width="1200"
+              height="400"
+              src="https://user-images.githubusercontent.com/1045274/199860681-7f8c1de4-04fc-4015-9e0f-b351af53b4b4.jpg"
+              alt=""
+            />
           </Link>
         </div>
 
@@ -38,7 +52,12 @@ export default function Home() {
               <li key={product.id}>
                 <Link href={`/products/${product.id}`}>
                   <div className={styles.productImage}>
-                    <img width="500" height="500" src={product.image} alt="" />
+                    <Image
+                      width={product.width}
+                      height={product.height}
+                      src={product.image}
+                      alt=""
+                    />
                   </div>
                   <h3 className={styles.productTitle}>
                     { product.name }
